@@ -51,7 +51,10 @@ function filterPublishedFiles(files) {
 function processFiles(files) {
   files.forEach((file) => {
     const relativePath = path.relative(vaultPath, file);
-    const targetFilePath = path.join(targetPath, relativePath);
+    // .md 확장자를 제거하고 .mdx 확장자를 추가
+    const targetFilePath = path
+      .join(targetPath, relativePath)
+      .replace(/\.md$/, ".mdx");
 
     // 필요한 경우 디렉토리 생성
     fs.mkdirSync(path.dirname(targetFilePath), { recursive: true });
@@ -69,14 +72,23 @@ function processFiles(files) {
     frontmatter.title = path.basename(file, ".md");
     frontmatterPart = yaml.dump(frontmatter);
 
+    // ArticleInfo 컴포넌트 임포트 경로 계산
+    const importPath = path
+      .relative(
+        path.dirname(targetFilePath),
+        path.join(process.cwd(), "components", "ArticleInfo")
+      )
+      .replace(/\\/g, "/");
+
+    // 파일 내용 구성
+    let newContent = `---\n${frontmatterPart}---\n\n`;
+    newContent += `import ArticleInfo from '${importPath}'\n\n`;
+    newContent += `# ${frontmatter.title}\n\n`;
+    newContent += `<ArticleInfo />\n`;
+    newContent += rest;
+
     // 파일에 다시 쓰기
-    fs.writeFileSync(
-      targetFilePath,
-      `---\n${frontmatterPart}---\n` +
-        `\n# ${frontmatter.title}\n` +
-        "---\n" +
-        rest
-    );
+    fs.writeFileSync(targetFilePath, newContent);
   });
 }
 
