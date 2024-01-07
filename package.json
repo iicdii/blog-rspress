@@ -9,10 +9,14 @@
     "sync": "node --env-file .env ./sync-obsidian.js"
   },
   "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
     "rspress": "^1.9.3"
   },
   "devDependencies": {
     "@types/node": "^20",
+    "@types/react": "^18.2.47",
+    "@types/react-dom": "^18.2.18",
     "js-yaml": "^4.1.0"
   }
 }

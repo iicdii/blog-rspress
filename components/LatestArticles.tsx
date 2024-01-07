@@ -35,8 +35,14 @@ const LatestArticles = (props?: LatestArticles) => {
         return (
           <li
             key={article.routePath}
-            clsasName="[&:not(:first-child)]:mt-2"
-            title={new Date(article.frontmatter.created).toLocaleDateString()}
+            className="[&:not(:first-child)]:mt-2"
+            title={
+              article.frontmatter.created
+                ? new Date(
+                    article.frontmatter.created as string
+                  ).toLocaleDateString()
+                : ""
+            }
           >
             <Link href={normalizeHref(article.routePath)}>{title}</Link>
           </li>
