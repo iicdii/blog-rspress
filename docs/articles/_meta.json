@@ -1,0 +1,21 @@
+[
+  {
+    "type": "custom-link",
+    "link": "/",
+    "label": "Home"
+  },
+  {
+    "type": "dir",
+    "name": "2. Area",
+    "label": "2. Area",
+    "collapsible": true,
+    "collapsed": false
+  },
+  {
+    "type": "dir",
+    "name": "3. Resource",
+    "label": "3. Resource",
+    "collapsible": true,
+    "collapsed": false
+  }
+]
