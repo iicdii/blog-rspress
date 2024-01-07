@@ -1,0 +1,123 @@
+---
+tags: null
+created: 2022-03-27T00:00:00.000Z
+published: true
+title: 2022-03 TIL
+---
+
+import ArticleInfo from '../../../../../../components/ArticleInfo'
+
+# 2022-03 TIL
+
+<ArticleInfo />
+
+
+**2022-03-03**
+
+# React에서 커링으로 arrow function 생성 없이 함수에 인자를 넣을 수 있다.
+
+![](https://i.imgur.com/CfGvIhp.png)
+
+```js
+function SomeComponent() {
+  const handleClick = (value) => {
+    return (e) => console.log(e, value);
+  };
+
+  return (
+    <div>
+      <button onClick={handleClick('A'}>A</button>
+      <button onClick={handleClick('B'}>B</button>
+      <button onClick={handleClick('C'}>C</button>
+    </div>
+  );
+}
+```
+
+# Array 병합 효율 테스트 - `concat` vs `push` vs `spread operator`
+
+**테스트 방법**
+
+- `concat` - `array.concat(array2)`
+- `push` - 반복문 안에서 하나씩 push 해봄
+- `spread operator` - `array.push(...array2)` 로 뿌리기
+
+**테스트 결과**
+
+- 안전성: `concat`
+- 속도: `push`, `spread operator`
+
+**흥미로운 점**
+
+요소가 100,000 개 넘어가는 경우 `spread operator` 에서 `RangeError: Maximum call stack size exceeded` 가 출력됨. 원인은 인풋으로 넣을 어레이 전체를 자바스크립트 콜스택에 넣기 때문에 어레이 크기가 너무 크면 에러를 뿜게됨.
+
+**총평**
+
+일반적으로 1000개가 넘는 어레이를 병합하는 일은 잘 없기 때문에 편한거 쓰면 될듯.
+하지만 어레이가 엄청 크다면 `concat`을 쓰는게 안전하다.
+
+**2022-03-27**
+
+# 이미지 최적화
+### 1. `.avif`, `.webp` 등 작은 용량을 가진 최신 이미지 포맷을 써서 이미지 로딩을 줄일 수 있다. 호환성을 위해 `<picture />` + `<source />` 조합을 쓰면 좋다.
+```html
+<picture>
+  <!-- If, 브라우저가 .avif 포맷을 지원하면 .avif 이미지를 사용함 -->
+  <source
+    type="image/avif" 
+    srcset="my-image.avif" 
+  />
+  <!-- Else, 브라우저가 .webp 포맷을 지원하면 .webp 이미지를 사용함  -->
+  <source
+    type="image/webp"
+    srcset="my-image.webp"
+  />
+  <!-- Else, .jpg를 사용함 -->
+  <img 
+    src="my-image.jpg" 
+    alt="A test image" 
+    loading="lazy" 
+    decoding="async"
+  />
+</picture>
+```
+
+### 2. `<img />` 또는 `<source />` 태그의 `srcset` 속성을 사용해서 화면 크기에 맞는 이미지를 불러올 수 있다.
+```html
+<picture>
+  <!-- 화면 크기 별로 다른 이미지 파일을 정의할 수 있다 : 380px, 640px and 960px -->
+  <source
+    type="image/avif" 
+    srcset="
+      my-image-380w.avif 380w,
+      my-image-640w.avif 640w,
+      my-image-960w.avif 960w
+    "
+    sizes="(max-width: 979px) 100vw, 640px"
+  />
+  <img 
+    src="my-image.jpg" 
+    alt="A test image" 
+    loading="lazy" 
+    decoding="async"
+  />
+</picture>
+```
+
+`sizes` 속성은 `srcset`에서 너비를 찾는 규칙을 정의한다. 기본값은 `100vw`다. 즉, 이미지의 너비를 확인하기 위해 브라우저는 브라우저 창의 너비만 가져온다. 예를 들어 위 코드에서 사용된 `(max-width: 979px) 100vw, 640px`를 보자. 이 코드는 뷰포트의 폭이 `979px` 이하일 경우 `100vw`를 사용하고, 아닌 경우 `640px`를 사용한다.
+
+아이폰 같은 경우 더 선명한 화면을 위해서 HiDPI 모드를 사용한다 (레티나 디스플레이). 따라서 화면 크기보다 더 큰 이미지를 요청할 수도 있다는 점을 알아두자.
+
+### 3. 무거운 이미지는 `loading="lazy"`, `decoding="async"` 속성을 써서 최적화하자.
+```html {4,5}
+<img 
+  src="my-image.jpg" 
+  alt="A test image" 
+  loading="lazy" 
+  decoding="async"
+/>
+```
+
+`decoding="async"`는 브라우저가 이미지 로딩을 병렬로 불러올 수 있음을 나타낸다. 브라우저는 페이지가 로드될 때 텍스트, 이미지를 동시에 디코딩하려고 한다. 그러나 사양이 좋지 않거나 네트워크가 느리면 무거운 이미지를 디코딩하는 데 시간이 걸릴 수 있으며 이로 인해 나머지 콘텐츠의 렌더링이 차단될 수 있다. 이 옵션을 사용하면 브라우저는 다른 콘텐츠를 렌더링하고 나중에 이미지를 렌더링한다. 이렇게 하면 사용자가 체감하는 성능이 크게 향상될 수 있다.
+
+`loading="lazy"`는 사용자 화면(뷰포트)에 이미지가 출력될 쯔음에 이미지를 로딩한다. 이렇게 하면 페이지 초기 로딩 속도를 향상시키고 서버 비용도 절감할 수 있는 장점이 있다. 

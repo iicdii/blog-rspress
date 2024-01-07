@@ -1,0 +1,107 @@
+---
+tags: null
+created: 2022-05-04T00:00:00.000Z
+published: true
+title: 2022-05 TIL
+---
+
+import ArticleInfo from '../../../../../../components/ArticleInfo'
+
+# 2022-05 TIL
+
+<ArticleInfo />
+
+**2022-05-04**
+# `return await` 가 코드를 느리게 만드는 이유
+
+**👎 Bad**
+```js
+async function foo() {
+    return await bar();
+}
+```
+> Using `return await` inside an `async function` keeps the current function in the call stack until the Promise that is being awaited has resolved, at the cost of an extra microtask before resolving the outer Promise. `return await` can also be used in a try/catch statement to catch errors from another function that returns a Promise.
+> You can avoid the extra microtask by not awaiting the return value, with the trade off of the function no longer being a part of the stack trace if an error is thrown asynchronously from the Promise being returned. This can make debugging more difficult. - [Eslint no-return-await 룰 설명 문서](https://eslint.org/docs/rules/no-return-await)
+
+`async function` 안에서 `return await` 를 하면 콜스택 안의 함수에서 Promise가 resolved 될 때 까지 대기하므로 **추가적인 microtask 비용**이 든다고 합니다.
+**리퀘스트 요청 숫자에 비례해서 이 비용이 증가하므로, 만약 트래픽이 많이 몰리는 경우 문제가 커질 수 있습니다.**
+이 문제를 해결하려면 아래처럼 return 하면 됩니다.
+
+**👍 Good**
+```js
+async function foo() {
+  return bar();
+}
+```
+
+그럼 `return await` 는 언제 쓸까요? 아래와 같은 상황(try/catch)에 쓰면 됩니다.
+
+```js
+// Correct usage of `return await`
+async function fn() {
+  try {
+    return await work();
+  } catch (err) {
+    return handleWorkError(error);
+  }
+}
+```
+위 예제에서 만약 `await work();` 의 `await` 를 제거하면 에러가 나도 catch 문 안의 코드가 절대 실행되지 않습니다.
+따라서 이 경우에는 `return await` 를 써줘야 catch문에서 에러를 잡을 수 있습니다.
+
+# React Query에서 네트워크 리퀘스트를 Mocking 하는 방법
+**결론: MSW 써서 네트워크 요청을 모킹하세요**
+
+> Use mock service worker by @ApiMocking
+
+MSW에 대해 간단히 설명하면 브라우저의 **서비스 워커에서 request를 intercept해서 리퀘스트를 모킹**하는 식으로 동작하는 라이브러리입니다.
+
+> Mock Service Worker is an API mocking library for browser and Node. It provides seamless mocking by interception of actual requests on the network level using Service Worker API. This makes your application unaware of any mocking being at place.
+
+- Browser뿐만 아니라 Node에서도 동작합니다.
+- REST와 GraphQL을 지원합니다. (`import { graphql } from 'msw'`)
+- fetch 모킹을 멈춰주세요 라는 블로그에서도 MSW를 대안으로 제시하고 있습니다.
+- Cypress 에서도 잘 동작합니다.
+
+참고로, axios를 쓰는지, fetch를 쓰는지, graphql-request를 쓰는지와 상관없이 요청을 intercept해서 내가 원하는 response를 반환할 수 있습니다.
+
+> The beauty of MSW is that it's agnostic of your request-issuing setup. All you have to do is to declare a query name that you wish to intercept and describe how to mock its response. - [discussions/789](https://github.com/mswjs/msw/discussions/879#discussioncomment-1224337)
+
+아래는 예시입니다. 쿼리의 name (opretaion name 아님)을 인터셉트해서 원하는 데이터를 반환하는 로직입니다.
+```js
+import { graphql } from 'msw'
+
+const handlers = [
+  graphql.query('getBrandsModels', (req, res, ctx) => {
+    return res(
+      ctx.data({
+        brands: [
+          {
+            id: 1,
+            brand: 'Lego',
+            models: [
+              {
+                id: 2,
+                model: 'Porsche',
+              },
+            ],
+          },
+        ],
+      })
+    )
+  }),
+]
+```
+
+graphql.link 를 이용해서 특정 GraphQL Endpoint 기반으로 요청을 intercept 할 수도 있습니다.
+```js
+import { graphql } from 'msw'
+
+const myService = graphql.link(process.env.NEXT_PUBLIC_API_GRAPHQL_URL)
+
+const handlers = [
+  myService.query('getBrandsModels', (req, res, ctx) => {
+    // The mocked response as described above.
+  }),
+]
+```

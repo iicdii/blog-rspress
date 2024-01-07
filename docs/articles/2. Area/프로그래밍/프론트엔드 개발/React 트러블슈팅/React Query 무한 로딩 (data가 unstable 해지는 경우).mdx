@@ -8,8 +8,11 @@ published: true
 title: React Query 무한 로딩 (data가 unstable 해지는 경우)
 ---
 
+import ArticleInfo from '../../../../../../components/ArticleInfo'
+
 # React Query 무한 로딩 (data가 unstable 해지는 경우)
----
+
+<ArticleInfo />
 
 React Query가 무한으로 네트워크를 요청하는 일이 발생했다.
 찾아보니, `data`가 안정적인 참조값을 들고 있지 않아, `data`에 의존성을 가진 useEffect가 계속해서 실행되는 문제였다.

@@ -1,0 +1,103 @@
+---
+tags: null
+created: 2021-07-04T00:00:00.000Z
+published: true
+title: 2021-07 TIL
+---
+
+import ArticleInfo from '../../../../../../components/ArticleInfo'
+
+# 2021-07 TIL
+
+<ArticleInfo />
+
+**2021-07-04**
+# const는 사실 수정할 수 있다
+```js
+const x = 1;
+x = 2; // 에러
+
+const y = [];
+y = 1; // 에러
+y.push(1);
+console.log(y); // => [1] 엥?
+```
+
+const는 수정할 수 없다며.. 왜 수정이 되는거지? 명세를 찾아보면 다음과 같다.
+```js
+...constant cannot change through re-assignment
+...constant cannot be re-declared
+```
+const는 재선언, 재할당이 안된다.
+하지만 재선언, 재할당이 아니라, `y.push(1);`는 y가 가르키고 있는 `[]`의 reference에 `1`이라는 값을 추가하는 것 뿐이다.
+즉, const로 선언하였더라도 재선언과 재할당만 아니면 수정이 가능하다.
+
+__2021-07-09__
+# 패키지 설치툴 yarn 강요하기
+```js
+//package.json
+{ 
+  ...
+  "engines": {
+    "npm": "please-use-yarn",
+    "yarn": ">= 1.19.1"
+  },
+  ...
+}
+```
+`package.json`의 `engines`부분에 위와 같이 작성하면 npm install 실행시 ‘please-use-yarn‘ 이라는 에러를 출력하게 만들 수 있다.
+
+__2021-07-13__
+# Next.js 프로젝트 절대 경로 설정하기
+루트 폴더에 아래 파일을 생성하면 로컬 모듈을 불러올 때 절대 경로로 불러올 수 있다.
+```js
+// tsconfig.json or jsconfig.json
+{
+  "compilerOptions": {
+    "baseUrl": "."
+  }
+}
+```
+
+__예제__
+```js
+// components/button.js
+export default function Button() {
+  return <button>Click me</button>
+}
+```
+```js
+// pages/index.js
+import Button from 'components/button'
+
+export default function HomePage() {
+  return (
+    <>
+      <h1>Hello World</h1>
+      <Button />
+    </>
+  )
+}
+```
+
+### WebStorm에서 절대 경로 import 설정하기
+`Preferences/Settings | Editor | Code Style | JavaScript`에 들어가서 `Use paths relative to the project, resource or sources root`을 활성화한다. 
+![code-style-imports](//images.contentful.com/aygsdsdi1qnw/1LK9KU3IKmM4vIl1FD2e06/f96400b476ee49d05b8e33f7afb0e599/code-style-imports.png)
+
+이렇게 설정해두면 autoImport 할 때도 절대 경로로 불러오고, 상대 경로로 불러온 라인이 있으면 절대 경로로 짧게 바꿀수 있다고 제안해준다.
+
+__2021-07-29__
+# Gitkraken에서 husky pre-commit 활성화하기
+보통은 `.git/hooks`폴더에 pre-commit hook이 저장되는데, husky v5버전 부터는 hook이 저장되는 위치를 지정하는 `core.hookspath`라는 기능을 사용하는 메커니즘으로 바뀌게 되었다. Gitkraken은 root 폴더에서 hook을 찾기 때문에 commit을 해도 hook이 실행되지 않는 문제가 있다. 해결방법은 `package.json`의 스크립트를 다음과 같이 수정하면 된다.
+
+```js
+{
+  ...
+  "scripts": {
+    ...
+    "prepare": "husky install && cp -a .husky/. .git/hooks/"
+  }
+}
+```
+
+husky 폴더의 훅을 루트 폴더에 복사해서 Gitkraken이 훅을 인식하게 만드는 것이다.
