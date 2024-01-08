@@ -72,7 +72,7 @@ RUN     yarn build
 빌드할 때 병목이 발생하는 구간입니다. 백엔드 빌드가 끝날 때 까지 프론트 빌드는 멍 때리는 것밖에 할 일이 없습니다.
 
 ![](https://i.imgur.com/anC9p7H.png)
-<p style="text-align:center;"><strong>"컵라면 7개라서 21분 기다린거야?"</strong></p>
+**"컵라면 7개라서 21분 기다린거야?"**
 
 Dockerfile을 분리하면 병렬로 빌드가 가능하니, 이 부분은 자연스럽게 해결됩니다.
 
@@ -282,7 +282,7 @@ AWS에서는 이 **링크** 설정에 대해서 다음과 같이 설명하고 �
 ## 결론
 ![](https://i.imgur.com/ysdEW2J.png)
 
-<p style="text-align:center;"><strong>Github Actions로 도커 이미지 빌드 결과</strong></p>
+**Github Actions로 도커 이미지 빌드 결과**
 
 서비스 별로 Dockerfile 분리, multi-stage build 및 가벼운 베이스 이미지를 사용한 이미지 용량 최소화, ECS에 reverse-proxy를 사용한 컨테이너 구성을 통해서
 
