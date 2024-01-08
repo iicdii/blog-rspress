@@ -9,6 +9,7 @@
     "sync": "node --env-file .env ./sync-obsidian.js"
   },
   "dependencies": {
+    "dayjs": "^1.11.10",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "rspress": "^1.9.3"
