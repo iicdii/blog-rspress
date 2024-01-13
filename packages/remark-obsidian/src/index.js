@@ -22,7 +22,7 @@ import {
 import {
   removeIgnoreParts,
   addPaywall,
-  titleToUrl as titleToUrlFn,
+  titleToUrl,
   fetchEmbedContent as fetchEmbedContentFn,
 } from "./utils";
 
@@ -30,8 +30,7 @@ const plugin =
   (options = {}) =>
   (tree) => {
     const {
-      markdownFolder = `${process.cwd()}/content`,
-      titleToUrl = titleToUrlFn,
+      markdownFolder = `${process.cwd()}/docs`,
       fetchEmbedContent = fetchEmbedContentFn,
       paywall = "<p>Paywall</p>",
     } = options;
