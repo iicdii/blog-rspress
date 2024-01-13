@@ -6,7 +6,8 @@
     "dev": "rspress dev",
     "build": "rspress build",
     "preview": "rspress preview",
-    "sync": "node --env-file .env ./sync-obsidian.js"
+    "sync": "node --env-file .env ./sync-obsidian.js",
+    "remark": "pnpm --filter remark-obsidian"
   },
   "dependencies": {
     "dayjs": "^1.11.10",
@@ -18,6 +19,9 @@
     "@types/node": "^20",
     "@types/react": "^18.2.47",
     "@types/react-dom": "^18.2.18",
-    "js-yaml": "^4.1.0"
+    "js-yaml": "^4.1.0",
+    "rehype-raw": "^6.1.1",
+    "remark-obsidian": "workspace:*",
+    "remark-obsidian-syntax": "workspace:*"
   }
 }

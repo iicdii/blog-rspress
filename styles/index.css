@@ -1,0 +1,27 @@
+.callout-title {
+  display: flex;
+  column-gap: 4px;
+}
+
+blockquote.callout {
+  padding: 12px 12px 12px 24px;
+}
+blockquote.callout .callout-title {
+  margin-bottom: 8px;
+  font-weight: 600;
+  font-size: 16px;
+}
+
+blockquote.callout.note {
+  border-color: var(--rp-container-info-border);
+  color: var(--rp-container-info-text);
+  background-color: var(--rp-container-info-bg);
+}
+
+blockquote.callout.note .callout-content > p {
+  color: inherit;
+}
+
+blockquote.callout.note code {
+  background-color: var(--rp-container-info-code-bg);
+}
