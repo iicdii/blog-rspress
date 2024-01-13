@@ -2,7 +2,8 @@ import fs from "fs";
 import path from "path";
 import { parse } from "yaml";
 import slugify from "slugify";
-import { normalizeHref, normalizeSlash } from "@rspress/shared";
+import { normalizeSlash } from "@rspress/shared";
+import sizeOf from "image-size";
 
 import { CODE_BLOCK_REGEX, BRACKET_LINK_REGEX } from "./constants";
 
@@ -93,12 +94,19 @@ export const addPaywall = (tree, paywall) => {
   addPaywall(tree);
 };
 
-export const fetchEmbedContent = (fileName, options) => {
-  const filePath = `${options.markdownFolder}/${fileName}.md`;
+export const fetchEmbedContent = (fileName) => {
+  const filePath = `docs/public/${fileName}`;
 
   if (!fs.existsSync(filePath)) return null;
 
-  return fs.readFileSync(filePath, "utf8");
+  const [, ext] = fileName.split(".");
+
+  if (ext === "md") {
+    return fs.readFileSync(filePath, "utf8");
+  } else if (["jpg", "jpeg", "png", "gif", "webp", "avif"].includes(ext)) {
+    const { width, height } = sizeOf(filePath);
+    return `<img src="/${fileName}" width="${width}" height="${height}" />`;
+  }
 };
 
 export const parseBracketLink = (bracketLink, titleToUrlFn = titleToUrl) => {

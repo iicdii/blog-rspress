@@ -81,11 +81,47 @@ function processFiles(files) {
   });
 }
 
+// 첨부 파일명을 추출하는 함수
+function extractAttachmentFilenames(content) {
+  const attachmentPattern = /!\[\[(.*?)]]/g;
+  let match;
+  const filenames = [];
+
+  while ((match = attachmentPattern.exec(content)) !== null) {
+    filenames.push(match[1]);
+  }
+
+  return filenames;
+}
+
+// 첨부 파일을 복사하는 함수
+function copyAttachments(files) {
+  const attachmentsPath = path.join(vaultPath, "attachments");
+  const publicPath = path.join("docs", "public");
+
+  files.forEach((file) => {
+    const content = fs.readFileSync(file, "utf8");
+    const attachmentFilenames = extractAttachmentFilenames(content);
+
+    attachmentFilenames.forEach((filename) => {
+      const attachmentFilePath = path.join(attachmentsPath, filename);
+      const targetFilePath = path.join(publicPath, filename);
+
+      // 첨부 파일이 존재하는 경우에만 복사
+      if (fs.existsSync(attachmentFilePath)) {
+        fs.mkdirSync(path.dirname(targetFilePath), { recursive: true });
+        fs.copyFileSync(attachmentFilePath, targetFilePath);
+      }
+    });
+  });
+}
+
 // 메인 로직
 function main() {
   const allFiles = findAllMarkdownFiles(vaultPath);
   const publishedFiles = filterPublishedFiles(allFiles);
   processFiles(publishedFiles);
+  copyAttachments(publishedFiles);
 }
 
 main();

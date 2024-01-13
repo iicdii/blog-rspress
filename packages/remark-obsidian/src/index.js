@@ -23,7 +23,7 @@ import {
   removeIgnoreParts,
   addPaywall,
   titleToUrl,
-  fetchEmbedContent as fetchEmbedContentFn,
+  fetchEmbedContent,
 } from "./utils";
 
 const plugin =
@@ -31,7 +31,6 @@ const plugin =
   (tree) => {
     const {
       markdownFolder = `${process.cwd()}/docs`,
-      fetchEmbedContent = fetchEmbedContentFn,
       paywall = "<p>Paywall</p>",
     } = options;
 
@@ -57,14 +56,23 @@ const plugin =
 
         if (!content) return node;
 
-        const embedTree = remark()
-          .use(remarkFrontmatter)
-          .use(remarkGfm)
-          .parse(content);
+        if (fileName.endsWith(".md")) {
+          const embedTree = remark()
+            .use(remarkFrontmatter)
+            .use(remarkGfm)
+            .parse(content);
 
-        plugin(options)(embedTree);
+          plugin(options)(embedTree);
 
-        parent.children.splice(index, 1, embedTree);
+          parent.children.splice(index, 1, embedTree);
+        } else {
+          const html = {
+            type: "html",
+            value: content,
+          };
+
+          parent.children.splice(index, 1, html);
+        }
 
         return node;
       }
