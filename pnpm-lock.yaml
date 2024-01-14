@@ -4,11 +4,6 @@ settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
-patchedDependencies:
-  '@rspress/plugin-auto-nav-sidebar@1.9.3':
-    hash: bxgcrz4blqqtjmdhybd3bdi3am
-    path: patches/@rspress__plugin-auto-nav-sidebar@1.9.3.patch
-
 importers:
 
   .:
@@ -2314,7 +2309,7 @@ packages:
       '@rsbuild/plugin-react': 0.2.1
       '@rsbuild/plugin-svgr': 0.2.1(webpack@5.89.0)
       '@rspress/mdx-rs': 0.4.3
-      '@rspress/plugin-auto-nav-sidebar': 1.9.3(patch_hash=bxgcrz4blqqtjmdhybd3bdi3am)
+      '@rspress/plugin-auto-nav-sidebar': 1.9.3
       '@rspress/plugin-container-syntax': 1.9.3
       '@rspress/plugin-last-updated': 1.9.3
       '@rspress/plugin-medium-zoom': 1.9.3(@rspress/runtime@1.9.3)
@@ -2464,13 +2459,12 @@ packages:
       '@rspress/mdx-rs-win32-x64-msvc': 0.4.3
     dev: false
 
-  /@rspress/plugin-auto-nav-sidebar@1.9.3(patch_hash=bxgcrz4blqqtjmdhybd3bdi3am):
+  /@rspress/plugin-auto-nav-sidebar@1.9.3:
     resolution: {integrity: sha512-NApL/o3/HNjFMpEFivxkHjVDBuETsPseX3ErSrovhBtz7HrJVFQdtolf21K8Ku/iqItNZkkj2ivt+hpA+owZnw==}
     engines: {node: '>=14.17.6'}
     dependencies:
       '@rspress/shared': 1.9.3
     dev: false
-    patched: true
 
   /@rspress/plugin-container-syntax@1.9.3:
     resolution: {integrity: sha512-38Q3xSK8pVBeWMReGrNE2CPeHlWaCiIVJwdKp8uuW3AQGsujPAaiYUtA56S5SAJKEQ5hrdBi6KTSsloE6zRbfQ==}

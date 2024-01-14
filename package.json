@@ -4,7 +4,6 @@
   "private": true,
   "scripts": {
     "dev": "rspress dev",
-    "prebuild": "pnpm install --frozen-lockfile",
     "build": "pnpm remark build && rspress build",
     "preview": "rspress preview",
     "sync": "node --env-file .env ./sync-obsidian.js",
@@ -23,10 +22,5 @@
     "js-yaml": "^4.1.0",
     "rehype-raw": "^6.1.1",
     "remark-obsidian": "workspace:*"
-  },
-  "pnpm": {
-    "patchedDependencies": {
-      "@rspress/plugin-auto-nav-sidebar@1.9.3": "patches/@rspress__plugin-auto-nav-sidebar@1.9.3.patch"
-    }
   }
 }

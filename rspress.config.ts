@@ -26,6 +26,9 @@ export default defineConfig({
       { icon: "github", mode: "link", content: "https://github.com/iicdii" },
     ],
   },
+  route: {
+    cleanUrls: true,
+  },
   markdown: {
     mdxRs: false,
     remarkPlugins: [remarkObsidian],
