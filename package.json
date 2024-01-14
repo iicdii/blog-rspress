@@ -22,5 +22,10 @@
     "js-yaml": "^4.1.0",
     "rehype-raw": "^6.1.1",
     "remark-obsidian": "workspace:*"
+  },
+  "pnpm": {
+    "patchedDependencies": {
+      "@rspress/plugin-auto-nav-sidebar@1.9.3": "patches/@rspress__plugin-auto-nav-sidebar@1.9.3.patch"
+    }
   }
 }
