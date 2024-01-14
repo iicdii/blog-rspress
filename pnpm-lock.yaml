@@ -13,9 +13,6 @@ importers:
 
   .:
     dependencies:
-      '@rspress/plugin-auto-nav-sidebar':
-        specifier: ^1.9.3
-        version: 1.9.3(patch_hash=bxgcrz4blqqtjmdhybd3bdi3am)
       dayjs:
         specifier: ^1.11.10
         version: 1.11.10

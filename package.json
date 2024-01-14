@@ -4,13 +4,13 @@
   "private": true,
   "scripts": {
     "dev": "rspress dev",
-    "build": "rspress build",
+    "prebuild": "pnpm install --frozen-lockfile",
+    "build": "pnpm remark build && rspress build",
     "preview": "rspress preview",
     "sync": "node --env-file .env ./sync-obsidian.js",
     "remark": "pnpm --filter remark-obsidian"
   },
   "dependencies": {
-    "@rspress/plugin-auto-nav-sidebar": "^1.9.3",
     "dayjs": "^1.11.10",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
