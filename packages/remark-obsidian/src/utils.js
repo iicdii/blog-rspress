@@ -43,10 +43,10 @@ export const titleToUrl = (title, folder) => {
     let relativePath = foundFilePath.substring(folder.length);
     relativePath = normalizeSlash(relativePath);
 
-    // 파일 확장자를 .md에서 .html로 변경
+    // 파일 확장자 제거
     relativePath = relativePath.replace(
       new RegExp(`${path.extname(relativePath)}$`),
-      ".html"
+      ""
     );
 
     return relativePath;
