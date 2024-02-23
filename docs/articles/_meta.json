@@ -2,6 +2,7 @@
   {
     "type": "custom-link",
     "link": "/",
+    "name": "Home",
     "label": "Home"
   },
   {
