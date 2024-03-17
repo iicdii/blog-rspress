@@ -27,10 +27,9 @@ b와 strong 중에 어떤걸 쓰는게 정답일까요? 왜 div로 모든 레이
 # 📦 웹사이트 구조를 이루는 태그들
 
 ### 1. div만으로 구성한 레이아웃
-![](https://i.imgur.com/6mjTi48.png)
-
+![[html_layout_only_div.png]]
 ### 2. semantic tag로 구성한 레이아웃
-![](https://i.imgur.com/OcAqyF9.png)
+![[html_layout_with_semantic.png]]
 
 어떤게 더 보기 좋아보이시나요?
 ## `article` vs `section`
@@ -94,15 +93,13 @@ b와 strong 중에 어떤걸 쓰는게 정답일까요? 왜 div로 모든 레이
 ### img
 이미지가 웹 페이지 안에서 하나의 중요한 콘텐츠로 구성되어 있다면 `img` 태그를 사용합니다.
 
-![](https://i.imgur.com/k48JJYp.png)
-
+![[img_tag_example.png]]
 ### CSS background
 이미지가 문서의 내용과 별개로 스타일링 목적을 위해서 배경 이미지로 사용되는 경우 (문서의 일부분이 아닌 경우) `CSS background`로 사용합니다.
 
-![](https://i.imgur.com/HNyGczq.png)
+![[css_background_example.png]]
 
-![](https://i.imgur.com/xaIvI0h.png)
-
+![[css_background_example2.png]]
 # 정리
 - `div`를 남발하지 말고 `header`, `nav`, `article`, `section`, `footer` 등 적절한 시맨트 태그를 이용해서 레이아웃을 구성하면 SEO, 웹 접근성, 유지보수에 좋다.
 - `i`는 시각적으로 이탤릭, `em`은 시각적, 청각적으로 이탤릭체이다.
