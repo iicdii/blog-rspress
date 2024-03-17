@@ -1,7 +1,7 @@
 export const BRACKET_LINK_REGEX =
   /\[\[([\p{L}\p{N}'?%.():&,+/€! ]+)#?([\p{L}\p{N}'?%.():&,+/€! ]+)?\|?([\p{L}\p{N}'?%.():&,+/€! ]+)?\]\]/gu;
 
-export const EMBED_LINK_REGEX = /!\[\[([a-zA-ZÀ-ÿ0-9-'?%.():&,+/€! ]+)\]\]/g;
+export const EMBED_LINK_REGEX = /!\[\[([a-zA-ZÀ-ÿ0-9-'?%.():&,+/€!_ ]+)\]\]/g;
 
 export const CODE_BLOCK_REGEX = /(```[\s\S]*?```)|(?:`[^`]*?`)/g;
 
