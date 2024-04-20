@@ -2,6 +2,7 @@ import * as path from "path";
 import { defineConfig } from "rspress/config";
 import remarkObsidian from "remark-obsidian";
 import rehypeRaw from "rehype-raw";
+import { pluginFontPretendard } from "./plugins/rspress-plugin-font-pretendard";
 
 const mdxNodeTypes = /** @type {const} */ [
   "mdxFlowExpression",
@@ -34,4 +35,5 @@ export default defineConfig({
     remarkPlugins: [remarkObsidian],
     rehypePlugins: [[rehypeRaw, { passThrough: mdxNodeTypes }]],
   },
+  plugins: [pluginFontPretendard()],
 });
