@@ -2,14 +2,16 @@ import {
   usePageData,
   normalizeHrefInRuntime as normalizeHref,
 } from "rspress/runtime";
+import dayjs from "dayjs";
 
 import { Link } from "rspress/theme";
 
 interface LatestArticles {
   content: React.ReactNode;
+  routePrefix?: string;
 }
 
-const LatestArticles = (props?: LatestArticles) => {
+const LatestArticles = ({ routePrefix }: LatestArticles) => {
   const {
     siteData: { pages },
   } = usePageData();
@@ -17,7 +19,9 @@ const LatestArticles = (props?: LatestArticles) => {
   const latestArticles = [...pages]
     .filter(
       (page) =>
-        page.routePath.startsWith("/articles") && page.frontmatter.created
+        page.routePath.startsWith(
+          "/articles" + (routePrefix ? routePrefix : "")
+        ) && page.frontmatter.created
     )
     .sort(
       (a, b) =>
@@ -27,7 +31,7 @@ const LatestArticles = (props?: LatestArticles) => {
     .slice(0, 10);
 
   return (
-    <ul className="list-disc pl-5 my-4 leading-7">
+    <ul className="my-4 leading-7">
       {latestArticles.map((article) => {
         const paths = article.routePath.split("/");
         const title = paths[paths.length - 1];
@@ -35,16 +39,14 @@ const LatestArticles = (props?: LatestArticles) => {
         return (
           <li
             key={article.routePath}
-            className="[&:not(:first-child)]:mt-2"
-            title={
-              article.frontmatter.created
-                ? new Date(
-                    article.frontmatter.created as string
-                  ).toLocaleDateString()
-                : ""
-            }
+            className="[&:not(:first-child)]:mt-2 flex justify-between"
           >
             <Link href={normalizeHref(article.routePath)}>{title}</Link>
+            <span>
+              {dayjs(article.frontmatter.created as string).format(
+                "YY. M. DD."
+              )}
+            </span>
           </li>
         );
       })}
