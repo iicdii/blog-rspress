@@ -60,7 +60,7 @@ export default defineConfig({
       title: "Harim",
       type: "website",
       url: "https://harimkim.netlify.app/",
-      image: "/blog_meta_image.png",
+      image: "https://harimkim.netlify.app/blog_meta_image.png",
       description: "개발과 라이프를 담은 공간",
       locale: "ko_KR",
     }),
