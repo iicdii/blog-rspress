@@ -28,6 +28,8 @@ export default defineConfig({
     socialLinks: [
       { icon: "github", mode: "link", content: "https://github.com/iicdii" },
     ],
+    searchPlaceholderText: "검색",
+    outlineTitle: "목차",
   },
   route: {
     cleanUrls: true,
