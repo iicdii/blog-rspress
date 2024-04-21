@@ -2,9 +2,9 @@ import * as path from "path";
 import { defineConfig } from "rspress/config";
 import remarkObsidian from "remark-obsidian";
 import rehypeRaw from "rehype-raw";
-import { pluginFontPretendard } from "./plugins/rspress-plugin-font-pretendard";
 import { pluginOpenGraph } from "rsbuild-plugin-open-graph";
 import { pluginGoogleAnalytics } from "rsbuild-plugin-google-analytics";
+import { pluginFontPretendard } from "./plugins/rspress-plugin-font-pretendard";
 
 const mdxNodeTypes = /** @type {const} */ [
   "mdxFlowExpression",
@@ -36,6 +36,23 @@ export default defineConfig({
     mdxRs: false,
     remarkPlugins: [remarkObsidian],
     rehypePlugins: [[rehypeRaw, { passThrough: mdxNodeTypes }]],
+    highlightLanguages: [
+      ["js", "javascript"],
+      ["ts", "typescript"],
+      ["jsx", "tsx"],
+      "tsx",
+      "json",
+      "css",
+      "scss",
+      "less",
+      ["xml", "xml-doc"],
+      "diff",
+      "yaml",
+      ["md", "markdown"],
+      ["mdx", "tsx"],
+      "bash",
+      "docker",
+    ],
   },
   plugins: [pluginFontPretendard()],
   builderPlugins: [
