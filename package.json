@@ -22,6 +22,7 @@
     "js-yaml": "^4.1.0",
     "rehype-raw": "6.1.1",
     "remark-obsidian": "workspace:*",
+    "rsbuild-plugin-google-analytics": "^1.0.0",
     "rsbuild-plugin-open-graph": "^1.0.0"
   }
 }

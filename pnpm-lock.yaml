@@ -39,6 +39,9 @@ importers:
       remark-obsidian:
         specifier: workspace:*
         version: link:packages/remark-obsidian
+      rsbuild-plugin-google-analytics:
+        specifier: ^1.0.0
+        version: 1.0.0(@rsbuild/core@0.6.1)
       rsbuild-plugin-open-graph:
         specifier: ^1.0.0
         version: 1.0.0(@rsbuild/core@0.6.1)
@@ -4000,6 +4003,14 @@ packages:
     resolution: {integrity: sha512-uKxbd0IhMZOhjAiD5oAFp7BqvkA4Dv47qpOCtaNvng4HBwdbWtdOh8f5nZNuk2rp51PMGk3bzfWu5oayNEuYnw==}
     engines: {node: '>=10.0.0'}
     hasBin: true
+
+  rsbuild-plugin-google-analytics@1.0.0:
+    resolution: {integrity: sha512-Z2hVetWq48QT+X/HMmtp+YTxzPw+ujt/KUrbQXn98LmUDYqJyGSCBAjit8atAoRiThUSKlkG+NU3+zkFvKoLdA==}
+    peerDependencies:
+      '@rsbuild/core': 0.x
+    peerDependenciesMeta:
+      '@rsbuild/core':
+        optional: true
 
   rsbuild-plugin-open-graph@1.0.0:
     resolution: {integrity: sha512-SuN9w2FH2v9Mp9/jBowH/RvR74i5A1KzM8+3JrCwCpsuny2HQ3iZqVETgDJ0VIcXqLHUxPnI0aGMgbAcqmlzcg==}
@@ -9642,6 +9653,10 @@ snapshots:
   rollup@2.79.1:
     optionalDependencies:
       fsevents: 2.3.3
+
+  rsbuild-plugin-google-analytics@1.0.0(@rsbuild/core@0.6.1):
+    optionalDependencies:
+      '@rsbuild/core': 0.6.1
 
   rsbuild-plugin-open-graph@1.0.0(@rsbuild/core@0.6.1):
     optionalDependencies:

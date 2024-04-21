@@ -4,6 +4,7 @@ import remarkObsidian from "remark-obsidian";
 import rehypeRaw from "rehype-raw";
 import { pluginFontPretendard } from "./plugins/rspress-plugin-font-pretendard";
 import { pluginOpenGraph } from "rsbuild-plugin-open-graph";
+import { pluginGoogleAnalytics } from "rsbuild-plugin-google-analytics";
 
 const mdxNodeTypes = /** @type {const} */ [
   "mdxFlowExpression",
@@ -45,6 +46,9 @@ export default defineConfig({
       image: "/images/blog_meta_image.png",
       description: "개발과 라이프를 담은 공간",
       locale: "ko_KR",
+    }),
+    pluginGoogleAnalytics({
+      id: "G-2ZTM2LL0DD",
     }),
   ],
 });
