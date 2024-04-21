@@ -59,7 +59,6 @@ export default defineConfig({
   plugins: [pluginFontPretendard()],
   builderPlugins: [
     pluginOpenGraph({
-      title: "Harim",
       type: "website",
       url: "https://harimkim.netlify.app/",
       image: "https://harimkim.netlify.app/blog_meta_image.png",
