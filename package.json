@@ -21,6 +21,7 @@
     "@types/react-dom": "^18.2.19",
     "js-yaml": "^4.1.0",
     "rehype-raw": "6.1.1",
-    "remark-obsidian": "workspace:*"
+    "remark-obsidian": "workspace:*",
+    "rsbuild-plugin-open-graph": "^1.0.0"
   }
 }

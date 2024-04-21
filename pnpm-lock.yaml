@@ -39,6 +39,9 @@ importers:
       remark-obsidian:
         specifier: workspace:*
         version: link:packages/remark-obsidian
+      rsbuild-plugin-open-graph:
+        specifier: ^1.0.0
+        version: 1.0.0(@rsbuild/core@0.6.1)
 
   packages/remark-obsidian:
     devDependencies:
@@ -2023,10 +2026,6 @@ packages:
     resolution: {integrity: sha512-QHTXI/sZQmko1cbDoNAa3mJ5qhWUUNAq3vR0/YiD379fWQrcfuoX1+HW2S0MTt7XmoPLapdaDKUtelUSPic7hQ==}
     engines: {node: '>=10.13.0'}
 
-  enhanced-resolve@5.15.0:
-    resolution: {integrity: sha512-LXYT42KJ7lpIKECr2mAXIaMldcNCh/7E0KBKOu4KSfkHmP+mZmSs+8V5gBAqisWBy0OO4W5Oyys0GO1Y8KtdKg==}
-    engines: {node: '>=10.13.0'}
-
   enhanced-resolve@5.16.0:
     resolution: {integrity: sha512-O+QWCviPNSSLAD9Ucn8Awv+poAkqn3T1XY5/N7kR7rQO9yfSGWkYZDwpJ+iKF7B8rxaQKWngSqACpgzeapSyoA==}
     engines: {node: '>=10.13.0'}
@@ -4001,6 +4000,14 @@ packages:
     resolution: {integrity: sha512-uKxbd0IhMZOhjAiD5oAFp7BqvkA4Dv47qpOCtaNvng4HBwdbWtdOh8f5nZNuk2rp51PMGk3bzfWu5oayNEuYnw==}
     engines: {node: '>=10.0.0'}
     hasBin: true
+
+  rsbuild-plugin-open-graph@1.0.0:
+    resolution: {integrity: sha512-SuN9w2FH2v9Mp9/jBowH/RvR74i5A1KzM8+3JrCwCpsuny2HQ3iZqVETgDJ0VIcXqLHUxPnI0aGMgbAcqmlzcg==}
+    peerDependencies:
+      '@rsbuild/core': 0.x
+    peerDependenciesMeta:
+      '@rsbuild/core':
+        optional: true
 
   rslog@1.2.0:
     resolution: {integrity: sha512-2ZFW7Jtkzt4VkwCFRTE+0lKbzSLSH7U5OM9qZ5YuKk4xVrlIJJZx9Qh/fCyfsk8H+qXbermMc7+18qKJxLQ/bw==}
@@ -7041,11 +7048,6 @@ snapshots:
       graceful-fs: 4.2.11
       tapable: 2.2.1
 
-  enhanced-resolve@5.15.0:
-    dependencies:
-      graceful-fs: 4.2.11
-      tapable: 2.2.1
-
   enhanced-resolve@5.16.0:
     dependencies:
       graceful-fs: 4.2.11
@@ -9641,6 +9643,10 @@ snapshots:
     optionalDependencies:
       fsevents: 2.3.3
 
+  rsbuild-plugin-open-graph@1.0.0(@rsbuild/core@0.6.1):
+    optionalDependencies:
+      '@rsbuild/core': 0.6.1
+
   rslog@1.2.0: {}
 
   rspack-plugin-virtual-module@0.1.12:
@@ -10274,7 +10280,7 @@ snapshots:
       acorn-import-assertions: 1.9.0(acorn@8.11.3)
       browserslist: 4.22.2
       chrome-trace-event: 1.0.3
-      enhanced-resolve: 5.15.0
+      enhanced-resolve: 5.16.0
       es-module-lexer: 1.4.1
       eslint-scope: 5.1.1
       events: 3.3.0

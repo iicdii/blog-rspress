@@ -3,6 +3,7 @@ import { defineConfig } from "rspress/config";
 import remarkObsidian from "remark-obsidian";
 import rehypeRaw from "rehype-raw";
 import { pluginFontPretendard } from "./plugins/rspress-plugin-font-pretendard";
+import { pluginOpenGraph } from "rsbuild-plugin-open-graph";
 
 const mdxNodeTypes = /** @type {const} */ [
   "mdxFlowExpression",
@@ -36,4 +37,14 @@ export default defineConfig({
     rehypePlugins: [[rehypeRaw, { passThrough: mdxNodeTypes }]],
   },
   plugins: [pluginFontPretendard()],
+  builderPlugins: [
+    pluginOpenGraph({
+      title: "Harim",
+      type: "website",
+      url: "https://harimkim.netlify.app/",
+      image: "/images/blog_meta_image.png",
+      description: "개발과 라이프를 담은 공간",
+      locale: "ko_KR",
+    }),
+  ],
 });
