@@ -8,6 +8,13 @@ import { Link } from "rspress/theme";
 import { H3 } from "../theme/docComponents/title";
 import styles from "./TopArticles.module.scss";
 
+const excludePaths = [
+  "/index",
+  "/",
+  "/articles/2.%20Area",
+  "/articles/3.%20Resource",
+];
+
 interface TopArticles {
   content?: React.ReactNode;
   limit?: number;
@@ -17,7 +24,7 @@ interface TopArticles {
 const TopArticles = ({ limit, position }: TopArticles) => {
   const { pathname } = useLocation();
 
-  if (pathname === "/index" && position === "footer") return null;
+  if (excludePaths.includes(pathname) && position === "footer") return null;
 
   const topArticles = data.slice(0, limit);
 
