@@ -7,11 +7,12 @@ import dayjs from "dayjs";
 import { Link } from "rspress/theme";
 
 interface LatestArticles {
-  content: React.ReactNode;
+  content?: React.ReactNode;
+  limit?: number;
   routePrefix?: string;
 }
 
-const LatestArticles = ({ routePrefix }: LatestArticles) => {
+const LatestArticles = ({ routePrefix, limit = 10 }: LatestArticles) => {
   const {
     siteData: { pages },
   } = usePageData();
@@ -28,7 +29,7 @@ const LatestArticles = ({ routePrefix }: LatestArticles) => {
         new Date(b.frontmatter.created as string).getTime() -
         new Date(a.frontmatter.created as string).getTime()
     )
-    .slice(0, 10);
+    .slice(0, limit);
 
   return (
     <ul className="my-4 leading-7">

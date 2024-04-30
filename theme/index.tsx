@@ -5,11 +5,12 @@ import { H1, H2, H3 } from "./docComponents/title";
 import { Hr } from "./docComponents/hr";
 import { Blockquote } from "./docComponents/paragraph";
 import ArticleHelmet from "../components/ArticleHelmet";
+import TopArticles from "../components/TopArticles";
 
 const Layout = () => (
   <Theme.Layout
-    /* Top of the entire page */
     top={<ArticleHelmet />}
+    afterDocContent={<TopArticles limit={7} position="footer" />}
   />
 );
 

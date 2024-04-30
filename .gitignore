@@ -25,3 +25,4 @@ dist-ssr
 doc_build
 
 .env
+service_account.json
