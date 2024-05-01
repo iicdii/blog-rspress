@@ -6,7 +6,6 @@ import data from "../data/topArticles.json";
 
 import { Link } from "rspress/theme";
 import { H3 } from "../theme/docComponents/title";
-import styles from "./TopArticles.module.scss";
 
 const excludePaths = [
   "/index",
@@ -30,17 +29,19 @@ const TopArticles = ({ limit, position }: TopArticles) => {
 
   if (position === "footer") {
     return (
-      <div className={styles.container}>
+      <div className="pt-5">
         <H3>주간 인기 TOP {limit}</H3>
-        <ul className={styles.list}>
+        <ul className="mt-4">
           {topArticles.map((article) => {
             return (
               <li
                 key={article.url}
-                className="[&:not(:first-child)]:mt-2 flex justify-between"
+                className="[&:not(:first-child)]:mt-2 flex justify-between gap-2"
               >
-                <Link href={normalizeHref(article.url)}>{article.title}</Link>
-                <span>{article.views}</span>
+                <Link href={normalizeHref(article.url)} className="flex-1">
+                  {article.title}
+                </Link>
+                <span className="text-gray-500">{article.views}</span>
               </li>
             );
           })}
@@ -54,10 +55,10 @@ const TopArticles = ({ limit, position }: TopArticles) => {
           return (
             <li
               key={article.url}
-              className="[&:not(:first-child)]:mt-2 flex justify-between"
+              className="[&:not(:first-child)]:mt-2 flex justify-between gap-2"
             >
               <Link href={normalizeHref(article.url)}>{article.title}</Link>
-              <span>{article.views}</span>
+              <span className="text-gray-500">{article.views}</span>
             </li>
           );
         })}

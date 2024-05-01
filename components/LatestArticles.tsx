@@ -40,10 +40,12 @@ const LatestArticles = ({ routePrefix, limit = 10 }: LatestArticles) => {
         return (
           <li
             key={article.routePath}
-            className="[&:not(:first-child)]:mt-2 flex justify-between"
+            className="[&:not(:first-child)]:mt-2 flex justify-between gap-2"
           >
-            <Link href={normalizeHref(article.routePath)}>{title}</Link>
-            <span>
+            <Link href={normalizeHref(article.routePath)} className="flex-1">
+              {title}
+            </Link>
+            <span className="text-gray-500">
               {dayjs(article.frontmatter.created as string).format(
                 "YY. M. DD."
               )}
