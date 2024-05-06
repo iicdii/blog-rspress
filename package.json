@@ -7,7 +7,8 @@
     "build": "pnpm remark build && rspress build",
     "preview": "rspress preview",
     "sync": "node --env-file .env ./sync-obsidian.js",
-    "remark": "pnpm --filter remark-obsidian"
+    "remark": "pnpm --filter remark-obsidian",
+    "weekly": "node ./fetchTopArticles.js"
   },
   "dependencies": {
     "dayjs": "^1.11.10",

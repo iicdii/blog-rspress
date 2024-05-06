@@ -39,7 +39,7 @@ jobs:
 
       # 스크립트 실행
       - name: Run fetchTopArticles.js
-        run: node fetchTopArticles.js
+        run: pnpm weekly
 
       # Git 설정
       - name: Configure Git
