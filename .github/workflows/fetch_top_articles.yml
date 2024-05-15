@@ -18,7 +18,7 @@ jobs:
         with:
           node-version: 20.x
 
-      - uses: pnpm/action-setup@v2
+      - uses: pnpm/action-setup@v4
         name: Install pnpm
         with:
           version: 8
@@ -35,6 +35,9 @@ jobs:
           key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
           restore-keys: |
             ${{ runner.os }}-pnpm-store-
+
+      - name: Install dependencies
+        run: pnpm install
 
       # 스크립트 실행
       - name: Run fetchTopArticles.js

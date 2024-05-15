@@ -34,6 +34,9 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-pnpm-store-
 
+      - name: Install dependencies
+        run: pnpm install
+
       # 스크립트 실행
       - name: Run fetchTopArticles.js
         run: pnpm weekly
