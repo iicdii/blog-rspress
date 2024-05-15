@@ -1,0 +1,55 @@
+name: Manual Fetch Top Articles
+
+on:
+  workflow_dispatch:
+
+jobs:
+  fetch_and_commit:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js 20.x
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20.x
+
+      - uses: pnpm/action-setup@v2
+        name: Install pnpm
+        with:
+          version: 8
+
+      - name: Get pnpm store directory
+        shell: bash
+        run: |
+          echo "STORE_PATH=$(pnpm store path --silent)" >> $GITHUB_ENV
+
+      - uses: actions/cache@v3
+        name: Setup pnpm cache
+        with:
+          path: ${{ env.STORE_PATH }}
+          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-pnpm-store-
+
+      # 스크립트 실행
+      - name: Run fetchTopArticles.js
+        run: pnpm weekly
+
+      # Git 설정
+      - name: Configure Git
+        run: |
+          git config --global user.email "harimkims@gmail.com"
+          git config --global user.name "Harim Kim"
+
+      # 파일 스테이징 및 커밋
+      - name: Add and commit changes
+        run: |
+          git add data/topArticles.json
+          git commit -m "feat: Weekly update of top articles"
+
+      # 변경 사항 푸시
+      - name: Push changes
+        run: git push origin main
