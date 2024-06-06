@@ -66,6 +66,14 @@ async function fetchTopArticles() {
   let newObj = [];
 
   response.rows.forEach((row) => {
+    if (
+      row.dimensionValues[0].value === "/" ||
+      row.dimensionValues[0].value === "/articles/2. Area" ||
+      row.dimensionValues[0].value === "/articles/3. Resource"
+    ) {
+      return;
+    }
+
     if (typeof row.dimensionValues[0].value.split("%")[1] !== "undefined") {
       row.dimensionValues[0].value = row.dimensionValues[0].value.split("%")[0];
     }
