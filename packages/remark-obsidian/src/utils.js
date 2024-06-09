@@ -106,6 +106,8 @@ export const fetchEmbedContent = (fileName) => {
   } else if (["jpg", "jpeg", "png", "gif", "webp", "avif"].includes(ext)) {
     const { width, height } = sizeOf(filePath);
     return `<img src="/${fileName}" width="${width}" height="${height}" />`;
+  } else if (["mp4", "webm", "ogg"].includes(ext)) {
+    return `<video src="/${fileName}" controls></video>`;
   }
 };
 
