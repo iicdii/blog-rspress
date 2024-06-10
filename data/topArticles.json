@@ -1,27 +1,7 @@
 [
   {
-    "url": "/articles/2. Area/프로그래밍/Node.js/Strapi 1년이면 풀스택을 읊는다",
-    "views": "1",
-    "title": "Strapi 1년이면 풀스택을 읊는다"
-  },
-  {
     "url": "/articles/2. Area/프로그래밍/프론트엔드 개발/React/React Strict DOM",
     "views": "1",
     "title": "React Strict DOM"
-  },
-  {
-    "url": "/articles/2. Area/프로그래밍/프론트엔드 개발/라프텔 이어보기 기능 개선하기 (Feat. Tampermonkey)",
-    "views": "1",
-    "title": "라프텔 이어보기 기능 개선하기 (Feat. Tampermonkey)"
-  },
-  {
-    "url": "/articles/3. Resource/브라우저 이슈/크롬 깜빡이는 커서 없애기 (feat. 캐럿 브라우징)",
-    "views": "1",
-    "title": "크롬 깜빡이는 커서 없애기 (feat. 캐럿 브라우징)"
-  },
-  {
-    "url": "/articles/3. Resource/컨퍼런스/FECONF 2023/몇 천 페이지의 유저 가이드를 새로 만들며",
-    "views": "1",
-    "title": "몇 천 페이지의 유저 가이드를 새로 만들며"
   }
 ]
