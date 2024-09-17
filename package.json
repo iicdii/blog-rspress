@@ -14,17 +14,17 @@
     "dayjs": "^1.11.13",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "rspress": "1.28.2"
+    "rspress": "1.31.0"
   },
   "devDependencies": {
     "@google-analytics/data": "^4.8.0",
-    "@types/node": "^20.16.2",
-    "@types/react": "^18.3.4",
+    "@types/node": "^20.16.5",
+    "@types/react": "^18.3.7",
     "@types/react-dom": "^18.3.0",
     "js-yaml": "^4.1.0",
     "rehype-raw": "6.1.1",
     "remark-obsidian": "workspace:*",
-    "rsbuild-plugin-google-analytics": "^1.0.2",
+    "rsbuild-plugin-google-analytics": "^1.0.3",
     "rsbuild-plugin-open-graph": "^1.0.2"
   }
 }
