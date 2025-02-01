@@ -12,19 +12,23 @@
   },
   "dependencies": {
     "dayjs": "^1.11.13",
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1",
-    "rspress": "1.39.3"
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "rspress": "1.40.2"
   },
   "devDependencies": {
-    "@google-analytics/data": "^4.11.0",
-    "@types/node": "^20.17.9",
-    "@types/react": "^18.3.12",
-    "@types/react-dom": "^18.3.1",
+    "@google-analytics/data": "^4.12.0",
+    "@types/node": "^22.13.0",
+    "@types/react": "^19.0.8",
+    "@types/react-dom": "^19.0.3",
     "js-yaml": "^4.1.0",
     "rehype-raw": "6.1.1",
     "remark-obsidian": "workspace:*",
     "rsbuild-plugin-google-analytics": "^1.0.3",
     "rsbuild-plugin-open-graph": "^1.0.2"
+  },
+  "volta": {
+    "node": "22.13.1",
+    "pnpm": "9.15.4"
   }
 }
