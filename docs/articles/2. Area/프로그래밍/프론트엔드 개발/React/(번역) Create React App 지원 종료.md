@@ -18,7 +18,7 @@ title: (번역) Create React App 지원 종료
 
 ---
 
-오늘, 우리는 새로운 앱을 위한 [Create React App](https://create-react-app.dev/)을 지원 중단하고, 기존 앱들은 [[#프레임워크로 마이그레이션하는 방법|빌드 도구로 마이그레이션]]로 마이그레이션하거나 Vite, Parcel, RSBuild와 같은 [[(번역) Create React App 지원 종료#프레임워크로 마이그레이션하는 방법|빌드 도구로 마이그레이션]]할 것을 권장합니다.
+오늘, 우리는 새로운 앱을 위한 [Create React App](https://create-react-app.dev/)을 지원 중단하고, 기존 앱들은 [[(번역) Create React App 지원 종료#프레임워크로 마이그레이션하는 방법|프레임워크로 마이그레이션]]로 마이그레이션하거나 Vite, Parcel, RSBuild와 같은 [[(번역) Create React App 지원 종료#프레임워크로 마이그레이션하는 방법|빌드 도구로 마이그레이션]]할 것을 권장합니다.
 
 또한 프레임워크가 프로젝트에 적합하지 않거나, 자신만의 프레임워크를 구축하고 싶거나, [처음부터 React 앱을 구축](https://react.dev/learn/build-a-react-app-from-scratch)하여 React가 어떻게 작동하는지 배우고 싶은 경우를 위한 문서도 제공합니다.
 
