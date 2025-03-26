@@ -12,7 +12,7 @@ import remarkGfm from "remark-gfm";
 import { toHtml } from "hast-util-to-html";
 import { toHast } from "mdast-util-to-hast";
 
-import slugify from "slugify";
+import GithubSlugger from "github-slugger";
 import {
   EMBED_LINK_REGEX,
   BRACKET_LINK_REGEX,
@@ -25,6 +25,8 @@ import {
   titleToUrl,
   fetchEmbedContent,
 } from "./utils";
+
+const slugger = new GithubSlugger();
 
 const plugin =
   (options = {}) =>
@@ -93,15 +95,11 @@ const plugin =
             }
 
             if (heading && text) {
-              return `<a href="${href}#${slugify(heading, {
-                lower: true,
-              })}" title="${text}">${text}</a>`;
+              return `<a href="${href}#${slugger.slug(heading)}" title="${text}">${text}</a>`;
             }
 
             if (heading) {
-              return `<a href="${href}#${slugify(heading, {
-                lower: true,
-              })}" title="${link}">${link}</a>`;
+              return `<a href="${href}#${slugger.slug(heading)}" title="${link}">${link}</a>`;
             }
 
             if (text) {

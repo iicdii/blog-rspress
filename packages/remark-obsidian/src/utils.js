@@ -1,11 +1,13 @@
 import fs from "fs";
 import path from "path";
 import { parse } from "yaml";
-import slugify from "slugify";
+import GithubSlugger from "github-slugger";
 import { normalizeSlash } from "@rspress/shared";
 import sizeOf from "image-size";
 
 import { CODE_BLOCK_REGEX, BRACKET_LINK_REGEX } from "./constants";
+
+const slugger = new GithubSlugger();
 
 export const extractFrontmatter = (markdown) => {
   const frontmatter = markdown.match(/^---([\s\S]+?)---/);
@@ -120,7 +122,7 @@ export const parseBracketLink = (bracketLink, titleToUrlFn = titleToUrl) => {
   const href = titleToUrlFn(link);
 
   return {
-    href: heading ? `${href}#${slugify(heading, { lower: true })}` : href,
+    href: heading ? `${href}#${slugger.slug(heading)}` : href,
     title: text || (heading ? link : link),
     slug: href.replace(/\//g, ""),
   };
