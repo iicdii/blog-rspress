@@ -4,18 +4,30 @@
 }
 
 blockquote.callout {
-  padding: 12px 12px 12px 24px;
+  padding: 20px 12px 20px 24px;
 }
 blockquote.callout .callout-title {
   margin-bottom: 8px;
   font-weight: 600;
   font-size: 16px;
+  text-transform: capitalize;
+}
+blockquote.callout .callout-icon {
+  width: 24px;
+  height: 24px;
+}
+blockquote.callout h4 {
+  margin-top: 20px;
+  margin-bottom: 12px;
 }
 
 blockquote.callout.note {
   border-color: var(--rp-container-info-border);
-  color: var(--rp-container-info-text);
   background-color: var(--rp-container-info-bg);
+}
+
+blockquote.callout.note .callout-title {
+  color: var(--rp-container-info-text);
 }
 
 blockquote.callout.note .callout-content > p {
