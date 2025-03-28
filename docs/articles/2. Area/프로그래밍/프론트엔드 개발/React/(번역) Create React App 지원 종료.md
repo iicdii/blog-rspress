@@ -41,7 +41,9 @@ Create React App은 시작하기 쉽지만, 고성능 프로덕션 앱을 구축
 오늘부터 새 앱을 설치하면 지원 중단 경고가 표시됩니다:
 
 ```
-create-react-app은 지원 중단되었습니다. react.dev에서 최신 React 프레임워크 목록을 찾을 수 있습니다. 자세한 정보는 react.dev/link/cra를 참조하세요. 이 오류 메시지는 설치당 한 번만 표시됩니다.
+create-react-app은 지원 중단되었습니다.
+react.dev에서 최신 React 프레임워크 목록을 찾을 수 있습니다.
+자세한 정보는 react.dev/link/cra를 참조하세요. 이 오류 메시지는 설치당 한 번만 표시됩니다.
 ```
 
 Create React App [웹사이트](https://create-react-app.dev/)와 GitHub [저장소](https://github.com/facebook/create-react-app)에도 지원 중단 공지를 추가했습니다. Create React App은 유지보수 모드로 계속 작동할 것이며, React 19와 함께 작동하도록 Create React App의 새 버전을 게시했습니다.
@@ -68,17 +70,17 @@ Create React App [웹사이트](https://create-react-app.dev/)와 GitHub [저장
 
 Vite, Parcel 또는 Rsbuild를 시작하는 데 도움이 되도록 [처음부터 React 앱 구축하기](https://react.dev/learn/build-a-react-app-from-scratch)에 대한 새로운 문서를 추가했습니다.
 
-##### 심층 분석
-
-#### 프레임워크가 필요한가요?
-
-대부분의 앱은 프레임워크를 사용하면 이점을 얻을 수 있지만, 처음부터 React 앱을 구축해야 하는 타당한 경우도 있습니다. 좋은 경험 법칙은 앱에 라우팅이 필요하다면 프레임워크를 사용하는 것이 좋다는 것입니다.
-
-Svelte에 Sveltekit, Vue에 Nuxt, Solid에 SolidStart가 있는 것처럼, [[(번역) Create React App 지원 종료#프레임워크 사용을 권장하는 이유|React는 라우팅을 데이터 가져오기 및 코드 분할과 같은 기능과 완전히 통합하는 프레임워크 사용을 권장합니다.]] 이렇게 하면 복잡한 구성을 직접 작성하고 본질적으로 자신만의 프레임워크를 구축해야 하는 어려움을 피할 수 있습니다.
-
-그러나 항상 Vite, Parcel 또는 Rsbuild와 같은 빌드 도구를 사용하여 [처음부터 React 앱을 구축](https://react.dev/learn/build-a-react-app-from-scratch)할 수 있습니다.
-
-계속 읽으면 [[(번역) Create React App 지원 종료#빌드 도구의 한계|빌드 도구의 한계]]와 [[(번역) Create React App 지원 종료#프레임워크 사용을 권장하는 이유|프레임워크를 권장하는 이유]]에 대해 자세히 알 수 있습니다.
+> [!NOTE]
+> 
+> #### 프레임워크가 필요한가요?
+> 
+> 대부분의 앱은 프레임워크를 사용하면 이점을 얻을 수 있지만, 처음부터 React 앱을 구축해야 하는 타당한 경우도 있습니다. 좋은 경험 법칙은 앱에 라우팅이 필요하다면 프레임워크를 사용하는 것이 좋다는 것입니다.
+> 
+> Svelte에 Sveltekit, Vue에 Nuxt, Solid에 SolidStart가 있는 것처럼, [[(번역) Create React App 지원 종료#프레임워크 사용을 권장하는 이유|React는 라우팅을 데이터 가져오기 및 코드 분할과 같은 기능과 완전히 통합하는 프레임워크 사용을 권장합니다.]] 이렇게 하면 복잡한 구성을 직접 작성하고 본질적으로 자신만의 프레임워크를 구축해야 하는 어려움을 피할 수 있습니다.
+>
+> 그러나 항상 Vite, Parcel 또는 Rsbuild와 같은 빌드 도구를 사용하여 [처음부터 React 앱을 구축](https://react.dev/learn/build-a-react-app-from-scratch)할 수 있습니다.
+>
+> 계속 읽으면 [[(번역) Create React App 지원 종료#빌드 도구의 한계|빌드 도구의 한계]]와 [[(번역) Create React App 지원 종료#프레임워크 사용을 권장하는 이유|프레임워크를 권장하는 이유]]에 대해 자세히 알 수 있습니다.
 
 ## 빌드 도구의 한계
 
@@ -263,39 +265,40 @@ Create React App, Vite 또는 Parcel과 같은 빌드 도구에서 이러한 모
 
 프레임워크는 Create React App과 동일한 시작 경험을 제공하지만, 실제 프로덕션 앱에서 사용자가 어차피 해결해야 하는 문제에 대한 솔루션도 제공합니다.
 
-##### 심층 분석
+> [!NOTE]
+> 
+> #### 서버 렌더링은 선택 사항입니다
+> 
+> 우리가 추천하는 프레임워크는 모두 [클라이언트 사이드 렌더링(CSR)](https://developer.mozilla.org/en-US/docs/Glossary/CSR) 앱을 만드는 옵션을 제공합니다.
+> 
+> 일부 경우에는 CSR이 페이지에 적합한 선택일 수 있지만, 많은 경우에는 그렇지 않습니다. 앱의 대부분이 클라이언트 사이드여도, 종종 [정적 사이트 생성(SSG)](https://developer.mozilla.org/en-US/docs/Glossary/SSG)이나 [서버 사이드 렌더링(SSR)](https://developer.mozilla.org/en-US/docs/Glossary/SSR)과 같은 서버 렌더링 > 기능의 혜택을 받을 수 있는 개별 페이지가 있습니다. 예를 들어 서비스 이용 약관 페이지나 문서 페이지가 있습니다.
+> 
+> 서버 렌더링은 일반적으로 클라이언트에 더 적은 JavaScript를 보내고, 전체 HTML 문서를 제공하여 [총 차단 시간(TBD)](https://web.dev/articles/tbt)을 줄임으로써 더 빠른 [첫 콘텐츠 페인트(FCP)](https://web.dev/articles/fcp)를 생성하며, 이는 [다음 페인트까지의 상호작용(INP)](https://web.dev/articles/inp)도 낮출 수 있습니다. 이것이 [Chrome 팀이 권장한](https://web.dev/articles/rendering-on-the-web) 가능한 최상의 성능을 달성하기 위해 전체 클라이언트 사이드 접근 방식보다 정적 또는 서버 사이드 > 렌더링을 고려하도록 권장하는 이유입니다.
+> 
+> 서버 사용에는 트레이드오프가 있으며, 모든 페이지에 항상 최선의 선택은 아닙니다. 서버에서 페이지를 생성하면 추가 비용이 발생하고 생성에 시간이 걸려 [첫 바이트까지의 > 시간(TTFB)](https://web.dev/articles/ttfb)이 증가할 수 있습니다. 최고 성능의 앱은 각 전략의 트레이드오프를 기반으로 페이지별로 적절한 렌더링 전략을 선택할 수 있습니다.
+> 
+> 프레임워크는 원하는 경우 어떤 페이지에서든 서버를 사용할 수 있는 옵션을 제공하지만, 서버 사용을 강제하지는 않습니다. 이를 통해 앱의 각 페이지에 맞는 렌더링 전략을 > 선택할 수 있습니다.
+>
+>#### Server Components는 어떤가요?
+>
+>우리가 추천하는 프레임워크는 또한 React Server Components를 지원합니다.
+>
+>Server Components는 라우팅과 데이터 가져오기를 서버로 이동하고, 렌더링된 경로 대신 렌더링하는 데이터를 기반으로 클라이언트 컴포넌트에 대한 코드 분할을 가능하게 하며, 최상의 [로딩 시퀀스](https://www.patterns.dev/vanilla/loading-sequence)를 위해 배송되는 JavaScript 양을 줄임으로써 이러한 문제를 해결하는 데 도움을 줍니다.
+>
+>Server Components는 서버를 필요로 하지 않습니다. 정적 사이트 생성(SSG) 앱을 위해 CI 서버에서 빌드 시에 실행하거나, 서버 사이드 렌더링(SSR) 앱을 위해 웹 서버에서 런타임에 실행할 수 있습니다.
+>
+>자세한 정보는 [제로 번들 크기 React Server Components 소개](https://react.dev/blog/2020/12/21/data-fetching-with-react-server-components)와 [문서](https://react.dev/reference/rsc/server-components)를 참조하세요.
 
-#### 서버 렌더링은 선택 사항입니다
+> [!NOTE]
+> 
+> #### 서버 렌더링은 SEO만을 위한 것이 아닙니다
+> 
+> 서버 렌더링은 [SEO](https://developer.mozilla.org/en-US/docs/Glossary/SEO)만을 위한 것이라는 일반적인 오해가 있습니다.
+> 
+> 서버 렌더링은 SEO를 개선할 수 있지만, 사용자가 화면에서 콘텐츠를 보기 전에 다운로드하고 파싱해야 하는 JavaScript 양을 줄여 성능도 향상시킵니다.
+> 
+> 이것이 Chrome 팀이 최상의 성능을 달성하기 위해 전체 클라이언트 사이드 접근 방식보다 정적 또는 서버 사이드 렌더링을 [고려하도록 권장한](https://web.dev/articles/rendering-on-the-web) 이유입니다.
 
-우리가 추천하는 프레임워크는 모두 [클라이언트 사이드 렌더링(CSR)](https://developer.mozilla.org/en-US/docs/Glossary/CSR) 앱을 만드는 옵션을 제공합니다.
-
-일부 경우에는 CSR이 페이지에 적합한 선택일 수 있지만, 많은 경우에는 그렇지 않습니다. 앱의 대부분이 클라이언트 사이드여도, 종종 [정적 사이트 생성(SSG)](https://developer.mozilla.org/en-US/docs/Glossary/SSG)이나 [서버 사이드 렌더링(SSR)](https://developer.mozilla.org/en-US/docs/Glossary/SSR)과 같은 서버 렌더링 기능의 혜택을 받을 수 있는 개별 페이지가 있습니다. 예를 들어 서비스 이용 약관 페이지나 문서 페이지가 있습니다.
-
-서버 렌더링은 일반적으로 클라이언트에 더 적은 JavaScript를 보내고, 전체 HTML 문서를 제공하여 [총 차단 시간(TBD)](https://web.dev/articles/tbt)을 줄임으로써 더 빠른 [첫 콘텐츠 페인트(FCP)](https://web.dev/articles/fcp)를 생성하며, 이는 [다음 페인트까지의 상호작용(INP)](https://web.dev/articles/inp)도 낮출 수 있습니다. 이것이 [Chrome 팀이 권장한](https://web.dev/articles/rendering-on-the-web) 가능한 최상의 성능을 달성하기 위해 전체 클라이언트 사이드 접근 방식보다 정적 또는 서버 사이드 렌더링을 고려하도록 권장하는 이유입니다.
-
-서버 사용에는 트레이드오프가 있으며, 모든 페이지에 항상 최선의 선택은 아닙니다. 서버에서 페이지를 생성하면 추가 비용이 발생하고 생성에 시간이 걸려 [첫 바이트까지의 시간(TTFB)](https://web.dev/articles/ttfb)이 증가할 수 있습니다. 최고 성능의 앱은 각 전략의 트레이드오프를 기반으로 페이지별로 적절한 렌더링 전략을 선택할 수 있습니다.
-
-프레임워크는 원하는 경우 어떤 페이지에서든 서버를 사용할 수 있는 옵션을 제공하지만, 서버 사용을 강제하지는 않습니다. 이를 통해 앱의 각 페이지에 맞는 렌더링 전략을 선택할 수 있습니다.
-
-#### Server Components는 어떤가요?
-
-우리가 추천하는 프레임워크는 또한 React Server Components를 지원합니다.
-
-Server Components는 라우팅과 데이터 가져오기를 서버로 이동하고, 렌더링된 경로 대신 렌더링하는 데이터를 기반으로 클라이언트 컴포넌트에 대한 코드 분할을 가능하게 하며, 최상의 [로딩 시퀀스](https://www.patterns.dev/vanilla/loading-sequence)를 위해 배송되는 JavaScript 양을 줄임으로써 이러한 문제를 해결하는 데 도움을 줍니다.
-
-Server Components는 서버를 필요로 하지 않습니다. 정적 사이트 생성(SSG) 앱을 위해 CI 서버에서 빌드 시에 실행하거나, 서버 사이드 렌더링(SSR) 앱을 위해 웹 서버에서 런타임에 실행할 수 있습니다.
-
-자세한 정보는 [제로 번들 크기 React Server Components 소개](https://react.dev/blog/2020/12/21/data-fetching-with-react-server-components)와 [문서](https://react.dev/reference/rsc/server-components)를 참조하세요.
-
-### 참고
-
-#### 서버 렌더링은 SEO만을 위한 것이 아닙니다
-
-서버 렌더링은 [SEO](https://developer.mozilla.org/en-US/docs/Glossary/SEO)만을 위한 것이라는 일반적인 오해가 있습니다.
-
-서버 렌더링은 SEO를 개선할 수 있지만, 사용자가 화면에서 콘텐츠를 보기 전에 다운로드하고 파싱해야 하는 JavaScript 양을 줄여 성능도 향상시킵니다.
-
-이것이 Chrome 팀이 최상의 성능을 달성하기 위해 전체 클라이언트 사이드 접근 방식보다 정적 또는 서버 사이드 렌더링을 [고려하도록 권장한](https://web.dev/articles/rendering-on-the-web) 이유입니다.
 
 ---
 
