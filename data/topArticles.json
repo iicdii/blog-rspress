@@ -1,33 +1,8 @@
 [
   {
     "url": "/articles/3. Resource/브라우저 이슈/크롬 깜빡이는 커서 없애기 (feat. 캐럿 브라우징)",
-    "views": "8",
+    "views": "6",
     "title": "크롬 깜빡이는 커서 없애기 (feat. 캐럿 브라우징)"
-  },
-  {
-    "url": "/articles/2. Area/프로그래밍/프론트엔드 개발/React/(번역) Create React App 지원 종료",
-    "views": "5",
-    "title": "(번역) Create React App 지원 종료"
-  },
-  {
-    "url": "/articles/2. Area/소프트웨어 엔지니어링/ORM vs ODM",
-    "views": "4",
-    "title": "ORM vs ODM"
-  },
-  {
-    "url": "/articles/3. Resource/개발 도구/nvm과 volta 동시에 사용하기",
-    "views": "3",
-    "title": "nvm과 volta 동시에 사용하기"
-  },
-  {
-    "url": "/articles/3. Resource/프로그래밍/디자인 패턴/제어 역전 (Inversion of Control)",
-    "views": "3",
-    "title": "제어 역전 (Inversion of Control)"
-  },
-  {
-    "url": "/articles/2. Area/프로그래밍/프론트엔드 개발/HTML 태그들, 헷갈리는거 정리해 보았다",
-    "views": "2",
-    "title": "HTML 태그들, 헷갈리는거 정리해 보았다"
   },
   {
     "url": "/articles/2. Area/프로그래밍/프론트엔드 개발/React 트러블슈팅/React Query 무한 로딩 (data가 unstable 해지는 경우)",
@@ -35,18 +10,43 @@
     "title": "React Query 무한 로딩 (data가 unstable 해지는 경우)"
   },
   {
-    "url": "/articles/2. Area/프로그래밍/프론트엔드 개발/TIL/yarn 같은 패키지 여러 버전으로 설치하기",
+    "url": "/articles/3. Resource/개발 도구/nvm과 volta 동시에 사용하기",
     "views": "2",
-    "title": "yarn 같은 패키지 여러 버전으로 설치하기"
+    "title": "nvm과 volta 동시에 사용하기"
   },
   {
-    "url": "/articles/3. Resource/프로그래밍/프론트엔드 개발/unknown 에러가 Axios Error 타입인지 확인하는 방법",
-    "views": "2",
-    "title": "unknown 에러가 Axios Error 타입인지 확인하는 방법"
-  },
-  {
-    "url": "/articles/2. Area/프로그래밍/프론트엔드 개발/Common.js를 찾을 수 없습니다",
+    "url": "/articles/2. Area/소프트웨어 엔지니어링/AWS/AWS ECS 꿀팁 2개",
     "views": "1",
-    "title": "Common.js를 찾을 수 없습니다"
+    "title": "AWS ECS 꿀팁 2개"
+  },
+  {
+    "url": "/articles/2. Area/프로그래밍/Node.js/Strapi 1년이면 풀스택을 읊는다",
+    "views": "1",
+    "title": "Strapi 1년이면 풀스택을 읊는다"
+  },
+  {
+    "url": "/articles/2. Area/프로그래밍/프론트엔드 개발/HTML 태그들, 헷갈리는거 정리해 보았다",
+    "views": "1",
+    "title": "HTML 태그들, 헷갈리는거 정리해 보았다"
+  },
+  {
+    "url": "/articles/2. Area/프로그래밍/프론트엔드 개발/React 트러블슈팅/크롬 하위버전 SyntaxError - Invalid regular expression 에러 해결하기",
+    "views": "1",
+    "title": "크롬 하위버전 SyntaxError - Invalid regular expression 에러 해결하기"
+  },
+  {
+    "url": "/articles/2. Area/프로그래밍/프론트엔드 개발/React/(번역) Create React App 지원 종료",
+    "views": "1",
+    "title": "(번역) Create React App 지원 종료"
+  },
+  {
+    "url": "/articles/2. Area/프로그래밍/프론트엔드 개발/React/React Strict DOM",
+    "views": "1",
+    "title": "React Strict DOM"
+  },
+  {
+    "url": "/articles/2. Area/프로그래밍/프론트엔드 개발/React/버벅이는 화면 React.memo로 최적화하기",
+    "views": "1",
+    "title": "버벅이는 화면 React.memo로 최적화하기"
   }
 ]
