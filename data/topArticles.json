@@ -1,17 +1,12 @@
 [
   {
     "url": "/articles/3. Resource/브라우저 이슈/크롬 깜빡이는 커서 없애기 (feat. 캐럿 브라우징)",
-    "views": "10",
+    "views": "8",
     "title": "크롬 깜빡이는 커서 없애기 (feat. 캐럿 브라우징)"
   },
   {
-    "url": "/articles/2. Area/소프트웨어 엔지니어링/ORM vs ODM",
-    "views": "3",
-    "title": "ORM vs ODM"
-  },
-  {
     "url": "/articles/2. Area/프로그래밍/프론트엔드 개발/React/(번역) Create React App 지원 종료",
-    "views": "3",
+    "views": "4",
     "title": "(번역) Create React App 지원 종료"
   },
   {
@@ -20,33 +15,38 @@
     "title": "React Strict DOM"
   },
   {
+    "url": "/articles/2. Area/프로그래밍/프론트엔드 개발/React/버벅이는 화면 React.memo로 최적화하기",
+    "views": "3",
+    "title": "버벅이는 화면 React.memo로 최적화하기"
+  },
+  {
     "url": "/articles/2. Area/프로그래밍/프론트엔드 개발/라프텔 이어보기 기능 개선하기 (Feat. Tampermonkey)",
     "views": "3",
     "title": "라프텔 이어보기 기능 개선하기 (Feat. Tampermonkey)"
   },
   {
+    "url": "/articles/2. Area/프로그래밍/Node.js/Strapi 1년이면 풀스택을 읊는다",
+    "views": "2",
+    "title": "Strapi 1년이면 풀스택을 읊는다"
+  },
+  {
+    "url": "/articles/2. Area/프로그래밍/프론트엔드 개발/React/React Testing Library에서 마크업 직접 확인하기",
+    "views": "2",
+    "title": "React Testing Library에서 마크업 직접 확인하기"
+  },
+  {
     "url": "/articles/3. Resource/컨퍼런스/내 타입스크립트 코드가 이렇게 느릴 리 없어",
-    "views": "3",
+    "views": "2",
     "title": "내 타입스크립트 코드가 이렇게 느릴 리 없어"
   },
   {
+    "url": "/articles/3. Resource/프로그래밍/프론트엔드 개발/JPG, PNG, GIF 차이점 요약",
+    "views": "2",
+    "title": "JPG, PNG, GIF 차이점 요약"
+  },
+  {
     "url": "/articles/3. Resource/프로그래밍/프론트엔드 개발/unknown 에러가 Axios Error 타입인지 확인하는 방법",
-    "views": "3",
+    "views": "2",
     "title": "unknown 에러가 Axios Error 타입인지 확인하는 방법"
-  },
-  {
-    "url": "/articles/2. Area/소프트웨어 엔지니어링/배포/도커빌드 시간을 3분의 1로 줄여보았다. Part 2",
-    "views": "2",
-    "title": "도커빌드 시간을 3분의 1로 줄여보았다. Part 2"
-  },
-  {
-    "url": "/articles/2. Area/프로그래밍/프론트엔드 개발/JavaScript 프레임워크/Next.js에 antd-mobile 설치하기",
-    "views": "2",
-    "title": "Next.js에 antd-mobile 설치하기"
-  },
-  {
-    "url": "/articles/2. Area/프로그래밍/프론트엔드 개발/React 트러블슈팅/React Query 무한 로딩 (data가 unstable 해지는 경우)",
-    "views": "2",
-    "title": "React Query 무한 로딩 (data가 unstable 해지는 경우)"
   }
 ]
