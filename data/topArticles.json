@@ -1,32 +1,32 @@
 [
   {
-    "url": "/articles/2. Area/프로그래밍/프론트엔드 개발/Web API 사용법/쿠키 (HTTP Cookie)",
-    "views": "2",
-    "title": "쿠키 (HTTP Cookie)"
-  },
-  {
     "url": "/articles/2. Area/프로그래밍/프론트엔드 개발/라프텔 이어보기 기능 개선하기 (Feat. Tampermonkey)",
-    "views": "2",
+    "views": "3",
     "title": "라프텔 이어보기 기능 개선하기 (Feat. Tampermonkey)"
   },
   {
-    "url": "/articles/2. Area/프로그래밍/프론트엔드 개발/React 트러블슈팅/크롬 하위버전 SyntaxError - Invalid regular expression 에러 해결하기",
-    "views": "1",
-    "title": "크롬 하위버전 SyntaxError - Invalid regular expression 에러 해결하기"
-  },
-  {
-    "url": "/articles/2. Area/프로그래밍/프론트엔드 개발/React/React Strict DOM",
-    "views": "1",
-    "title": "React Strict DOM"
-  },
-  {
-    "url": "/articles/2. Area/프로그래밍/프론트엔드 개발/Web 트러블슈팅/이미지 로딩 중에 레이아웃이 밀리는 문제 해결하기",
-    "views": "1",
-    "title": "이미지 로딩 중에 레이아웃이 밀리는 문제 해결하기"
-  },
-  {
     "url": "/articles/3. Resource/브라우저 이슈/크롬 깜빡이는 커서 없애기 (feat. 캐럿 브라우징)",
-    "views": "1",
+    "views": "3",
     "title": "크롬 깜빡이는 커서 없애기 (feat. 캐럿 브라우징)"
+  },
+  {
+    "url": "/articles/2. Area/프로그래밍/프론트엔드 개발/Web API 사용법/Blob URL과 Data URL",
+    "views": "2",
+    "title": "Blob URL과 Data URL"
+  },
+  {
+    "url": "/articles/2. Area/프로그래밍/프론트엔드 개발/React/Immer의 원리와 lodash cloneDeep 함수와의 차이점",
+    "views": "1",
+    "title": "Immer의 원리와 lodash cloneDeep 함수와의 차이점"
+  },
+  {
+    "url": "/articles/2. Area/프로그래밍/프론트엔드 개발/Web API 사용법/쿠키 (HTTP Cookie)",
+    "views": "1",
+    "title": "쿠키 (HTTP Cookie)"
+  },
+  {
+    "url": "/articles/3. Resource/프로그래밍/프론트엔드 개발/JPG, PNG, GIF 차이점 요약",
+    "views": "1",
+    "title": "JPG, PNG, GIF 차이점 요약"
   }
 ]
